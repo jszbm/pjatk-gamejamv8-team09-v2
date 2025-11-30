@@ -148,7 +148,7 @@ public partial class @InputAsset: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""40367e2b-3ebd-43bd-8b0e-8943f3d41bf5"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
