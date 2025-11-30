@@ -31,8 +31,8 @@ namespace Assets.Scripts.Controllers
             while (true)
             {
                 var spawnPosition = new Vector3(Random.Range(
-                    spawnParent.position.x - spawnPoints[1].position.x * childScale, 
-                    spawnParent.position.x + spawnPoints[2].position.x * childScale), 
+                    spawnParent.position.x + spawnPoints[1].localPosition.x * childScale, 
+                    spawnParent.position.x + spawnPoints[2].localPosition.x * childScale), 
                     spawnParent.position.y, 
                     spawnParent.position.z);
                 Instantiate(enemy, spawnPosition, transform.rotation);
