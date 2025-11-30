@@ -34,6 +34,7 @@ public class GameOverMenu : MonoBehaviour
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+        SignalBus.Instance.PausePerformedFromCode.Invoke();
     }
 
     public void MainMenu()
