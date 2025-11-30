@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   x_speed: 0.25
-  base_y_speed: 0.25
+  base_y_speed: 0.3
   additional_y_speed: 0.25
 --- !u!114 &-7601321575050328543
 MonoBehaviour:

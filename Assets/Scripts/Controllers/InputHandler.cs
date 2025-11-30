@@ -24,7 +24,7 @@ namespace Assets.Scripts.Controllers
 
         private void Start()
         {
-            //SignalBus.Instance.OnGameOver.AddListener(LockInputs);
+            SignalBus.Instance.OnGameOver.AddListener(LockInputs);
             SignalBus.Instance.OnPlayerNeedToRespawn.AddListener(LockInputs);
             SignalBus.Instance.OnPlayerRespawned.AddListener(UnlockInputs);
             SignalBus.Instance.OnPauseStateChanged.AddListener(HandlePauseEvent);
@@ -38,7 +38,7 @@ namespace Assets.Scripts.Controllers
         {
             if (SignalBus.Instance != null)
             {
-                //SignalBus.Instance.OnGameOver.RemoveListener(LockInputs);
+                SignalBus.Instance.OnGameOver.RemoveListener(LockInputs);
                 SignalBus.Instance.OnPlayerNeedToRespawn.RemoveListener(LockInputs);
                 SignalBus.Instance.OnPlayerRespawned.RemoveListener(UnlockInputs);
                 SignalBus.Instance.OnPauseStateChanged.RemoveListener(HandlePauseEvent);

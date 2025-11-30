@@ -9,6 +9,12 @@ namespace Assets.Scripts.Controllers
         private void Start()
         {
             InputHandler.Instance.InputActions.Menu.Pause.performed += HandlePauseEvent;
+            SignalBus.Instance.PausePerformedFromCode.AddListener(() =>
+            {
+                IsPaused = !IsPaused;
+                SignalBus.Instance.OnPauseStateChanged.Invoke(IsPaused);
+                Time.timeScale = IsPaused ? 0f : 1f;
+            });
         }
 
         private void HandlePauseEvent(InputAction.CallbackContext context)
