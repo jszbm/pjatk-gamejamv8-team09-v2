@@ -4,7 +4,7 @@ public class EnvironmentMovement : MonoBehaviour
 {
     private Vector3 startPos;
     private bool goingForward = true;
-    public float targetZ = -410f;
+    public float targetZ = -400f;
     
     private float speed = 22f;
     
