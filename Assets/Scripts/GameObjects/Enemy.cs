@@ -8,8 +8,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        var rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = new Vector2(0, -base_y_speed);
+        var rb = GetComponent<Rigidbody>();
+        rb.linearVelocity = new Vector3(0, -base_y_speed, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

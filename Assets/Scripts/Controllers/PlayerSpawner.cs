@@ -6,6 +6,8 @@ public class PlayerSpawner : MonoBehaviour
 
     [SerializeField] private GameObject player;
     private Transform[] spawnPoints;
+    private Transform spawnParent;
+    private float childScale;
 
     void Start()
     {
@@ -14,13 +16,19 @@ public class PlayerSpawner : MonoBehaviour
         {
             Debug.LogError("Spawning area must have at least two child points to define spawn range.");
         }
+        spawnParent = spawnPoints[0];
+        childScale = spawnPoints[0].localScale.x;
 
         SignalBus.Instance.OnPlayerNeedToRespawn.AddListener(PlayerRespawn);
     }
 
     private void PlayerRespawn()
     {
-        var spawnPosition = new Vector3(Random.Range(spawnPoints[1].transform.position.x, spawnPoints[2].transform.position.x), spawningArea.transform.position.y, 0);
+        var spawnPosition = new Vector3(Random.Range(
+            spawnParent.position.x - spawnPoints[1].position.x * childScale, 
+            spawnParent.position.x + spawnPoints[2].position.x * childScale), 
+            spawnParent.position.y, 
+            spawnParent.position.z);
 
         player.transform.position = spawnPosition;
         player.SetActive(true);

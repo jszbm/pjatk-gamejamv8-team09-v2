@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     [SerializeField] private float x_speed = 10;
     [SerializeField] private float base_y_speed = 3;
     [SerializeField] private float additional_y_speed = 5;
@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         speedUpAction = InputHandler.Instance.InputActions.Movement.SpeedUp;
     }
    
@@ -27,6 +27,6 @@ public class PlayerMovement : MonoBehaviour
             final_y_speed += additional_y_speed;
         }
         
-        rb.linearVelocity = new Vector2(moveDirection * x_speed, -final_y_speed);
+        rb.linearVelocity = new Vector3(moveDirection * x_speed, -final_y_speed, 0);
     }
 }

@@ -10,6 +10,8 @@ namespace Assets.Scripts.Controllers
         [SerializeField] private float spawnInterval = 2f;
 
         private Transform[] spawnPoints;
+        private Transform spawnParent;
+        private float childScale;
 
         void Start()
         {
@@ -18,6 +20,8 @@ namespace Assets.Scripts.Controllers
             {
                 Debug.LogError("Spawning area must have at least two child points to define spawn range.");
             }
+            spawnParent = spawnPoints[0];
+            childScale = spawnPoints[0].localScale.x;
 
             StartCoroutine(SpawnEnemies());
         }
@@ -26,10 +30,14 @@ namespace Assets.Scripts.Controllers
         {
             while (true)
             {
-                var spawnPosition = new Vector3(Random.Range(spawnPoints[1].transform.position.x, spawnPoints[2].transform.position.x), spawningArea.transform.position.y, 0);
-                Instantiate(enemy, spawnPosition, Quaternion.identity);
+                var spawnPosition = new Vector3(Random.Range(
+                    spawnParent.position.x - spawnPoints[1].position.x * childScale, 
+                    spawnParent.position.x + spawnPoints[2].position.x * childScale), 
+                    spawnParent.position.y, 
+                    spawnParent.position.z);
+                Instantiate(enemy, spawnPosition, transform.rotation);
 
-                yield return new WaitForSeconds(spawnInterval); // Adjust spawn interval as needed
+                yield return new WaitForSeconds(spawnInterval);
             }
         }
 
