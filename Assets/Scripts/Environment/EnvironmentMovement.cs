@@ -8,19 +8,18 @@ public class EnvironmentMovement : MonoBehaviour
     
     private float speed = 22f;
     
-    
     void Start()
     {
-        startPos = transform.position;
+        startPos = transform.localPosition;
     }
     
     void Update()
     {
         if (goingForward)
         {
-            transform.position -= Vector3.forward * speed * Time.deltaTime;
+            transform.localPosition -= new Vector3(0,0,1) * speed * Time.deltaTime;
             
-            if (transform.position.z <= targetZ)
+            if (transform.localPosition.z <= targetZ)
             {
                 goingForward = false;
             }
@@ -28,7 +27,7 @@ public class EnvironmentMovement : MonoBehaviour
         else
         {
 
-            transform.position = startPos;
+            transform.localPosition = startPos;
             goingForward = true;
         }
     }

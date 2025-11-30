@@ -1,13 +1,18 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject spawningArea;
-
     [SerializeField] private GameObject player;
+    [SerializeField] private int scoreIncrement = 100;
+    [SerializeField] private TextMeshProUGUI ScoreText;
+
     private Transform[] spawnPoints;
     private Transform spawnParent;
     private float childScale;
+    private const string score = "Score:\n";
+    private int scoreCounter = 0;
 
     void Start()
     {
@@ -32,6 +37,9 @@ public class PlayerSpawner : MonoBehaviour
 
         player.transform.position = spawnPosition;
         player.SetActive(true);
+
+        scoreCounter += scoreIncrement;
+        ScoreText.text = score + scoreCounter.ToString();
 
         SignalBus.Instance.OnPlayerRespawned.Invoke();
     }
