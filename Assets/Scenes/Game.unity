@@ -1099,6 +1099,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: LowResRender
       objectReference: {fileID: 0}
+    - target: {fileID: 2454356988029552298, guid: 2fc74a04086e3740aa101354b8f7cf9d, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454356988029552298, guid: 2fc74a04086e3740aa101354b8f7cf9d, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454356988029552298, guid: 2fc74a04086e3740aa101354b8f7cf9d, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 4590258244637224865, guid: 2fc74a04086e3740aa101354b8f7cf9d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
