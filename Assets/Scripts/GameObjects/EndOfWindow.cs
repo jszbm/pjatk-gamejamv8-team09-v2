@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class EndOfWindow : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (other.transform.CompareTag("Player"))
         {
-            collision.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
             SignalBus.Instance.OnPlayerNeedToRespawn.Invoke();
         }
 
-        if (collision.transform.CompareTag("Enemy"))
+        if (other.transform.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }
