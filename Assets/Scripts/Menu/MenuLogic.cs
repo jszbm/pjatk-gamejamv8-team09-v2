@@ -5,6 +5,7 @@ public class MenuLogic : MonoBehaviour
 {
 
     [SerializeField] private GameObject creditsPanel;
+    [SerializeField] private GameObject tutorialPanel;
     
     public void ExitGame()
     {
@@ -24,6 +25,16 @@ public class MenuLogic : MonoBehaviour
     public void CreditsHide()
     {
         creditsPanel.SetActive(false);
+    }
+
+    public void TutorialShow()
+    {
+        tutorialPanel.SetActive(true);
+    }
+
+    public void TutorialHide()
+    {
+        tutorialPanel.SetActive(false);
     }
     
 }
