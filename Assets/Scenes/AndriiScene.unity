@@ -7171,13 +7171,13 @@ MonoBehaviour:
   sounds:
   - name: Engine
     clip: {fileID: 8300000, guid: ae0bf085e09d57e45ac11631344464ae, type: 3}
-    volume: 0.8
+    volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Rain
     clip: {fileID: 8300000, guid: f9ffce674f8a08546b97b596d3c0a4e5, type: 3}
-    volume: 1
+    volume: 0.35
     pitch: 1
     loop: 1
     source: {fileID: 0}
