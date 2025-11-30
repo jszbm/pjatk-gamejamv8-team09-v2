@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Player"))
+        if (other.transform.CompareTag("Player") && !PlayerObject.Instance.IsInvisible)
         {
             other.gameObject.SetActive(false);
             SignalBus.Instance.OnGameOver.Invoke();

@@ -1,3 +1,4 @@
+using Assets.Scripts.Player;
 using TMPro;
 using UnityEngine;
 
@@ -37,6 +38,7 @@ public class PlayerSpawner : MonoBehaviour
 
         player.transform.position = spawnPosition;
         player.SetActive(true);
+        PlayerObject.Instance.StartInvisibility();
 
         scoreCounter += scoreIncrement;
         ScoreText.text = score + scoreCounter.ToString();

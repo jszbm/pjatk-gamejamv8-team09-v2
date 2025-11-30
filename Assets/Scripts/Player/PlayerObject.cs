@@ -8,9 +8,14 @@ namespace Assets.Scripts.Player
         public static PlayerObject Instance;
         //public bool IsInvisible { get; private set; } = false;
 
-        [SerializeField] private float timeForInvisibility = 1f;
+        [SerializeField] private float timeForInvisibility = 2f;
+        public bool IsInvisible { get; private set; } = false;
 
-        private void Awake() => Instance = this;
+        private void Awake()
+        {
+            Instance = this;
+            StartInvisibility();
+        }
 
         private void OnDestroy()
         {
@@ -23,6 +28,20 @@ namespace Assets.Scripts.Player
             //{
             //    SignalBus.Instance.OnInvisibility.RemoveListener(HandleInvisibility);
             //}
+        }
+
+        public void StartInvisibility()
+        {
+            StartCoroutine(Invisibility());
+        }
+
+        private IEnumerator Invisibility()
+        {
+            IsInvisible = true;
+            Debug.Log("Invisibility started");
+            yield return new WaitForSeconds(timeForInvisibility);
+            IsInvisible = false;
+            Debug.Log("Invisibility ended");
         }
 
         //private void Start()

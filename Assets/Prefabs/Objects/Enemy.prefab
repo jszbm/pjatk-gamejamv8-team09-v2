@@ -138,9 +138,9 @@ GameObject:
   - component: {fileID: 523843917857609119}
   - component: {fileID: 310711158624066326}
   - component: {fileID: 6284287765902003721}
-  - component: {fileID: -6103386495610802738}
   - component: {fileID: -5217589283102596980}
   - component: {fileID: 3609306915174685972}
+  - component: {fileID: 624205030570746297}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -235,27 +235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   base_y_speed: 0.25
---- !u!135 &-6103386495610802738
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2924997150978476706}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.25
-  m_Center: {x: 0, y: -0.04, z: 0}
 --- !u!54 &-5217589283102596980
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -305,3 +284,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &624205030570746297
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924997150978476706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15885508
+  m_Height: 0.71
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
